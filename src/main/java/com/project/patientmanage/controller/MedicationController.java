@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
@@ -46,6 +47,44 @@ public class MedicationController {
         return  "redirect:/";
 
     }
+    @GetMapping("/showFormForUpdate/{id}")
+    public String showUpdateForm(@PathVariable("id") Long id, Model model) {
+       Medication medication = medicationService.getMedicationById(id);
+        model.addAttribute("medication", medication);
+        return "update_medication"; // Thymeleaf template name
+    }
+
+
+    @PostMapping ("/updateMedication/{id}")
+    public String updateMedication(@PathVariable("id") Long id, @ModelAttribute("medication") Medication updatedMedication) {
+        medicationService.updateMedication(id, updatedMedication);
+
+        return "redirect:/";
+    }
+
+
+
+
+    @GetMapping("/delete/{id}")
+    public String deleteMedication(@PathVariable Long id, Model model) {
+        medicationService.deleteMedication(id);
+        return "redirect:/";
+    }
+
+
+    @GetMapping("/viewMedication/{id}")
+    public String viewMedication(@PathVariable Long id, Model model) {
+
+        Medication medication = medicationService.getMedicationById(id);
+
+
+        // Add the employee to the model to pass it to the view
+        model.addAttribute("medication", medication);
+
+        // Return the name of the view to render
+        return "view";
+    }
+
 
 
 

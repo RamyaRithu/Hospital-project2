@@ -49,12 +49,9 @@
     <div class="container p-5">
         <div class="row">
             <div class="col-md-10 offset-md-1">
-                <a
-                        th:href="@{/showAddMedicationForm/{id}}"
-                        class="btn btn-info btn-sm mb-3">Add Medication</a>
 
                 <div class="card">
-                    <div class="card-header bg-success text-center fs-4">Appointment Details</div>
+                    <div class="card-header bg-success text-center fs-4">Medication Details</div>
 
 
                     <div class="card-body">
@@ -65,7 +62,6 @@
                                 <th scope="col">prescription</th>
                                 <th scope="col">Doctor Detail</th>
                                 <th scope="col">Patient Detail</th>
-                                <th scope="col">Action</th>
 
 
 
@@ -81,16 +77,6 @@
 
 
 
-                                <td>
-                                    <a th:href="@{'showFormForUpdate/'+${e.id}}"
-                                       class="btn btn-sm btn-primary">Update</a>
-                                    <!--                                    <a th:href="@{/delete/{id}(id=${employee.id})}"-->
-                                    <!--                                       class="btn btn-sm btn-danger">Delete</a>-->
-                                    <a th:href="@{/delete/{id}(id=${e.id})}" class="btn btn-sm btn-danger">Delete</a>
-
-
-                                    <a th:href="@{'viewMedication/'+${e.id}}"
-                                       class="btn btn-sm btn-danger">View</a></td>
                                 </td>
                             </tr>
 

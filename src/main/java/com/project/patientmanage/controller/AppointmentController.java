@@ -45,7 +45,7 @@ public class AppointmentController {
         appointmentService.save(appointment);
 
         //redirect to home page
-        return  "redirect:/";
+        return  "redirect:/ListOfAppointment";
 
     }
 }

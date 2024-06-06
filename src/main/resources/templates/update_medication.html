@@ -44,53 +44,47 @@
                         <!--                            <a class="nav-link" th:href="@{/Home/contact-US}"><h4>Contact US</h4></a>-->
                         <!--                        </li>-->
                     </ul></div></div></nav></div></div><br><br>
+<body>
 
-<section>
-    <div class="container p-5">
-        <div class="row">
-            <div class="col-md-10 offset-md-1">
+<div class="container">
 
-                <div class="card">
-                    <div class="card-header bg-success text-center fs-4">Appointment Details</div>
+    <h2>Update Details</h2>
 
+    <form
+            action="#"
+            th:action="@{/updateMedication}"
+            th:object="${medication}"
+            method="POST"
+    >
+        <input
+                type="text"
+                th:field="*{prescription}"
+                placeholder="prescription"
+                class="form-control mb-4 col-4"
 
-                    <div class="card-body">
-                        <table class="table">
-                            <thead class=" " style="font-size:large; ">
-                            <tr>
-                                <th scope="col">Id</th>
-                                <th scope="col">Patient Email</th>
-                                <th scope="col">Patient Name</th>
-                              <th scope="col">Doctor Name</th>
-                                <th scope="col">Specialization</th>
-                                <th scope="col">DateAndTime</th>
-
-
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr th:each="e,c:${appointmentList}">
-                                <th scope="row">[[${c.count}]]</th>
-                                <td>[[${e.email}]]</td>
-                                <td>[[${e.patientName}]]</td>
-                                <td>[[${e.doctorName}]]</td>
-                                <td>[[${e.Specialization}]]</td>
-                                <td>[[${e.dateTime}]]</td>
-
+        />
+        <input
+                type="text"
+                th:field="*{doctorDetail}"
+                placeholder="patientDetail"
+                class="form-control mb-4 col-4"
+        />
+        <input
+                type="text"
+                th:field="*{patientDetail}"
+                placeholder="patientDetail"
+                class="form-control mb-4 col-4"
+        />
 
 
 
-                                </td>
-                            </tr>
 
-                            </tbody>
 
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+        <button type="submit" class="btn btn-info col-4">Update</button>
+    </form>
+    <hr />
+    <!--    //go back to previous list on home page -->
+    <a th:href="@{/ListOfMedication}">Back to Doctor List</a>
+</div>
 </body>
 </html>
