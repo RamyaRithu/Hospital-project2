@@ -44,7 +44,7 @@ public class MedicationController {
         medicationService.save(medication);
 
         //redirect to home page
-        return  "redirect:/";
+        return  "redirect:/ListOfMedication";
 
     }
     @GetMapping("/showFormForUpdate/{id}")
@@ -59,7 +59,7 @@ public class MedicationController {
     public String updateMedication(@PathVariable("id") Long id, @ModelAttribute("medication") Medication updatedMedication) {
         medicationService.updateMedication(id, updatedMedication);
 
-        return "redirect:/";
+        return "redirect:/ListOfMedication";
     }
 
 
@@ -68,7 +68,7 @@ public class MedicationController {
     @GetMapping("/delete/{id}")
     public String deleteMedication(@PathVariable Long id, Model model) {
         medicationService.deleteMedication(id);
-        return "redirect:/";
+        return "redirect:/ListOfMedication";
     }
 
 

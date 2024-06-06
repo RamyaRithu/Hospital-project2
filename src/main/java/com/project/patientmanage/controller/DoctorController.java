@@ -43,7 +43,7 @@ public class DoctorController {
         doctorService.saveDoctor(doctor);
 
         //redirect to home page
-        return  "redirect:/";
+        return  "redirect:/ListOfDoctor";
 
     }
 
