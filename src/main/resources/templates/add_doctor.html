@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <title>Hospital</title>
+    <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+            integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+            crossorigin="anonymous"
+    />
+</head>
+
+<body>
+
+<div class="nav bg-info" >
+    <div>
+        <nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
+            <div class="container">
+                <a class="navbar-brand" th:href="@{/index}"><h1>Hospital Managment System</h1></a>
+                <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1">
+                    <span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse "
+                     id="navcol-1" >
+                    <ul class="nav navbar-nav mr-auto">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" th:href="@{/showRegistrationForm/{id}}"><h4>Patient </h4></a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" th:href="@{/ListOfAppointment}"><h4>Appointment</h4></a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" th:href="@{/ListOfDoctor}"><h4>Doctors</h4></a>
+                        </li>
+
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" th:href="@{/ListOfMedication}"><h4>Medicines</h4></a>
+                        </li>
+                        <!--                        <li class="nav-item" role="presentation">-->
+                        <!--                            <a class="nav-link" th:href="@{/Home/contact-US}"><h4>Contact US</h4></a>-->
+                        <!--                        </li>-->
+                    </ul></div></div></nav></div></div><br><br>
+<body>
+
+<div class="container">
+
+    <h2>Save Patient Details</h2>
+
+    <form
+            action="#"
+            th:action="@{/saveDoctor}"
+            th:object="${doctor}"
+            method="POST"
+    >
+        <input
+                type="text"
+                th:field="*{doctorName}"
+                placeholder="Doctor Name"
+                class="form-control mb-4 col-4"
+
+        />
+        <input
+                type="text"
+                th:field="*{Specialization}"
+                placeholder="Specialization"
+                class="form-control mb-4 col-4"
+        />
+        <input
+                type="text"
+                th:field="*{degree}"
+                placeholder="Degree"
+                class="form-control mb-4 col-4"
+        />
+        <input
+                type="text"
+                th:field="*{state}"
+                placeholder="State"
+                class="form-control mb-4 col-4"
+        />
+        <input
+                type="text"
+                th:field="*{city}"
+                placeholder="city"
+                class="form-control mb-4 col-4"
+        />
+
+
+
+        <button type="submit" class="btn btn-info col-4">Save</button>
+    </form>
+    <hr />
+    <!--    //go back to previous list on home page -->
+    <a th:href="@{/ListOfDoctor}">Back to Doctor List</a>
+</div>
+</body>
+</html>

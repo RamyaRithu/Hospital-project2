@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <title>Hospital</title>
+    <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+            integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+            crossorigin="anonymous"
+    />
+</head>
+
+<body>
+
+<div class="nav bg-info" >
+    <div>
+        <nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
+            <div class="container">
+                <a class="navbar-brand" th:href="@{/index}"><h1>Hospital Managment System</h1></a>
+                <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1">
+                    <span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse "
+                     id="navcol-1" >
+                    <ul class="nav navbar-nav mr-auto">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" th:href="@{/showRegistrationForm/{id}}"><h4>Patients</h4></a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" th:href="@{/ListOfAppointment}"><h4>Appointment</h4></a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" th:href="@{/ListOfDoctor}"><h4>Doctors</h4></a>
+                        </li>
+
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" th:href="@{/ListOfMedication}"><h4>Medicines</h4></a>
+                        </li>
+<!--                        <li class="nav-item" role="presentation">-->
+<!--                            <a class="nav-link" th:href="@{/Home/contact-US}"><h4>Contact US</h4></a>-->
+<!--                        </li>-->
+                    </ul></div></div></nav></div></div><br><br>
+<div class="article-list">
+    <div class="container">
+        <div class="intro">
+            <h2 class="text-center">Hospital Management</h2>
+            <p class="text-center">Currently, hospitals are largely staffed by professional physicians, surgeons,
+                nurses, and allied health practitioners, whereas in the past, this work was usually performed by the
+                members of founding religious orders or by volunteers</p>
+        </div><br><br>
+        <div class="row articles">
+            <div class="col-sm-6 col-md-4 item"><a href="#"><img class="img-fluid" src="https://w0.peakpx.com/wallpaper/315/432/HD-wallpaper-medical-hospital.jpg"></a>
+                <h3 class="name">Doctor</h3>
+                <p class="description">Doctors make people healthier. When people get sick, doctors figure out why. They
+                    give people medicine and other kinds of treatment. They also give advice about diet, exercise, and
+                    sleep.</p><a class="action" href="#"><i class="fa fa-arrow-circle-right"></i></a></div>
+            <div
+                    class="col-sm-6 col-md-4 item"><a href="#"><img class="img-fluid" src="https://png.pngtree.com/thumb_back/fh260/background/20220507/pngtree-hospital-building-for-healthcare-cartoon-background-vector-illustration-with-image_1319913.jpg"></a>
+                <h3 class="name">Hospital</h3>
+                <p class="description">A hospital is a health care institution providing patient treatment with
+                    specialized medical and nursing staff and medical equipment.</p><a class="action" href="#"><i
+                        class="fa fa-arrow-circle-right"></i></a></div>
+            <div
+                    class="col-sm-6 col-md-4 item"><a href="#"><img class="img-fluid" src="https://img.etimg.com/thumb/width-1600,height-900,imgsize-115652,resizemode-75,msid-100719896/industry/healthcare/biotech/pharmaceuticals/india-bans-14-fixed-dose-medicines-for-likely-posing-risks-to-health.jpg"></a>
+                <h3 class="name">Medicines</h3>
+                <p class="description">Pharmacy is the science and technique of preparing, dispensing, and reviewing
+                    drugs and providing additional clinical services. It is a health profession that links health
+                    sciences with pharmaceutical sciences and aims to ensure the safe, effective, and affordable use of
+                    drugs.</p><a class="action" href="#"><i class="fa fa-arrow-circle-right"></i></a></div>
+        </div>
+    </div>
+</div>
+<script src="/Home/js/jquery.min.js"></script>
+<script src="/Home/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

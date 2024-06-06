@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <title>Hospital</title>
+    <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+            integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+            crossorigin="anonymous"
+    />
+</head>
+
+<body>
+
+<div class="nav bg-info" >
+    <div>
+        <nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
+            <div class="container">
+                <a class="navbar-brand" th:href="@{/index}"><h1>Hospital Managment System</h1></a>
+                <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1">
+                    <span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse "
+                     id="navcol-1" >
+                    <ul class="nav navbar-nav mr-auto">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" th:href="@{/showRegistrationForm/{id}}"><h4>Patient </h4></a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" th:href="@{/ListOfAppointment}"><h4>Appointment</h4></a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" th:href="@{/ListOfDoctor}"><h4>Doctors</h4></a>
+                        </li>
+
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" th:href="@{/ListOfMedication}"><h4>Medicines</h4></a>
+                        </li>
+                        <!--                        <li class="nav-item" role="presentation">-->
+                        <!--                            <a class="nav-link" th:href="@{/Home/contact-US}"><h4>Contact US</h4></a>-->
+                        <!--                        </li>-->
+                    </ul></div></div></nav></div></div><br><br>
+
+<section>
+    <div class="container p-5">
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <a
+                        th:href="@{/showAddDoctorForm/{id}}"
+                        class="btn btn-info btn-sm mb-3">Add Doctor</a>
+                <div class="card">
+                    <div class="card-header bg-success text-center fs-4">Doctor Details</div>
+
+
+                    <div class="card-body">
+                        <table class="table">
+                            <thead class=" " style="font-size:large; text-align:center;">
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">DoctorName</th>
+                                <th scope="col">Specialization</th>
+                                <th scope="col">Degree</th>
+                                <th scope="col">State</th>
+                                <th scope="col">City</th>
+
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="e,c:${doctorList}">
+                                <th scope="row">[[${c.count}]]</th>
+                                <td>[[${e.doctorName}]]</td>
+                                <td>[[${e.Specialization}]]</td>
+                                <td>[[${e.degree}]]</td>
+                                <td>[[${e.state}]]</td>
+                                <td>[[${e.city}]]</td>
+
+
+                                <td>
+                                    <a th:href="@{/showAppointmentForm/{id}}"
+                                       class="btn btn-sm btn-primary">Appointment</a>
+                                    <!--&lt;!&ndash;                                    <a th:href="@{/delete/{id}(id=${employee.id})}"&ndash;&gt;
+                                    &lt;!&ndash;                                       class="btn btn-sm btn-danger">Delete</a>&ndash;&gt;
+                                    <a th:href="@{/delete/{id}(id=${e.id})}" class="btn btn-sm btn-danger">Delete</a>
+
+
+                                    <a th:href="@{'viewEmployee/'+${e.id}}"
+                                       class="btn btn-sm btn-danger">View</a></td>-->
+                                </td>
+                            </tr>
+
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
